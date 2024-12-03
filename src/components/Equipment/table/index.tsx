@@ -1,11 +1,8 @@
-import React from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Table, TableHeader, TableBody, TableRow, TableCell } from '@/components/ui/table';
 import { format, parseISO } from 'date-fns';
 import { useNavigate } from "react-router"
-const EquipmentTable = ({ equipments }) => {
-  const handleRowClick = (id) => {
-    console.log('Equipment ID:', id);
-  };
+const EquipmentTable = ({ equipments }:{equipments:any[]}) => {
   const nav = useNavigate()
 
   return (
@@ -19,7 +16,7 @@ const EquipmentTable = ({ equipments }) => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {equipments.map((equipment) => (
+        {equipments.map((equipment:any) => (
           <TableRow
             key={equipment.id}
            
