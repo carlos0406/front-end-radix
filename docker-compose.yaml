@@ -1,0 +1,8 @@
+services:
+  app-frontend:
+    build: .
+    container_name: radix_app_frontend
+    ports:
+    - "5173:5173"
+    environment:
+    - VITE_API_URL=http://localhost:3000
