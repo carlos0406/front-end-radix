@@ -1,9 +1,4 @@
 # Equipment Management Frontend
-
-## Project Overview
-
-A modern, responsive frontend application for equipment management, built with cutting-edge web technologies to provide an intuitive and efficient user experience.
-
 ## Technologies Used
 
 - React
