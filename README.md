@@ -32,6 +32,8 @@ cd frontend
 pnpm install
 ```
 
+2. Set env "VITE_API_URL=http://localhost:3000" in .env file
+
 3. Run the development server
 ```bash
 pnpm dev
