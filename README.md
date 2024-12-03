@@ -97,3 +97,4 @@ export const useEquipments = () => {
 - Advanced filtering capabilities
 - New Pages
 - User authentication
+- Build a production bundle(jscode)
