@@ -32,3 +32,18 @@
     --chart-5: 340 75% 55%;
   }
 }
+
+
+@layer components {
+  .table-row {
+    @apply border-b transition-colors hover:bg-slate-700/50 data-[state=selected]:bg-slate-700;
+  }
+
+  .table-header {
+    @apply h-12 px-4 text-left align-middle font-medium text-slate-400;
+  }
+
+  .table-cell {
+    @apply p-4 align-middle [&:has([role=checkbox])]:pr-0 text-slate-300;
+  }
+}

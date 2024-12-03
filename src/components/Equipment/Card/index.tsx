@@ -3,15 +3,17 @@ import { EquipmentProps } from "..";
 import { ReportsAreaChart } from "@/components/charts/chart3";
 import { useState } from "react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Ban } from "lucide-react";
 
 export function EquipmentCard({
-  id, description,
+  id,
 }: EquipmentProps) {
   const [timeRange, setTimeRange] = useState(24);
-  const {data,isLoading} = useEquipmentReports(id,timeRange)
+  const {data,isLoading, isError } = useEquipmentReports(id,timeRange)
   return (
-    <div className="flex flex-col items-center justify-center text-white gap-2 py-4 bg-[#21222D] rounded-md min-h-[756px]">
-      <div className="text-2xl font-bold p-4 ">Equipment {id} - {description}</div>
+    <div className="flex flex-col items-center justify-center text-white gap-2 py-4 min-h-[756px]">
+      <div className="text-2xl font-bold p-4 ">Equipment {id}</div>
+      {isError && <div className="flex flex-row justify-center items-center text-red-600"><Ban/> Error on list equipment report</div> }
       <div className="w-9/12 flex flex-col gap-2">
         <div className="max-w-36">
         <Select value={String(timeRange)} onValueChange={value => setTimeRange(Number(value))}>

@@ -1,20 +1,21 @@
-import { LoaderCircle } from "lucide-react"
-import { EquipmentsContainer } from "./components/Equipment/Container"
 import { Header } from "./components/header"
-import { useEquipments } from "./hooks/useEquipments"
+import { BrowserRouter, Route, Routes } from "react-router"
+import { Home } from "./pages/home"
+import { EquipmentReport } from "./pages/equipmentReport"
 
 function App() {
-  const {data,isLoading,isError} = useEquipments() 
+ 
   return (
 
    <div className="w-full min-h-screen bg-[#171821] ">
+     
+      <BrowserRouter>
       <Header/>
-      <div className="w-full flex items-center justify-center pt-4">
-        {isLoading && <LoaderCircle  className="animate-spin" color="white" size={42} />}
-      </div>
-      {!isLoading && !isError && data && (
-        <EquipmentsContainer equipments={data.equipments} />
-      )}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/report/:id" element ={<EquipmentReport />} />
+        </Routes>
+      </BrowserRouter>
    </div>
   )
 }
